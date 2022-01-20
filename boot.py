@@ -1,4 +1,3 @@
-import senko
 import time
 from umqtt.simple import MQTTClient
 import ubinascii
@@ -21,12 +20,3 @@ routercon = network.WLAN(network.STA_IF)
 
 print('Connection successful')
 
-OTA = senko.Senko(user = "quintajm",
-                  repo="SenkoTest",
-                  branch="main",
-                  files = ["boot.py","main.py","servo_control.py","senko.py"]
-                  )
-
-if OTA.update():
-    print("Updated to the latest version! Rebooting...")
-    machine.reset()
